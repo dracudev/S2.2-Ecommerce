@@ -81,13 +81,17 @@ function buy(id) {
         {
             product.quantity = 1;
             cart.push(product); 
+            applyPromotionsCart(product)
+            subtotal(product)
+            printCart(product)
         }         
         else if (product.id === id && isOnCart(id))
+        {
             product.quantity++;
-    }        
-    applyPromotionsCart()
-    sumCart()
-    printCart()
+            subtotal(product)
+            printCart(product)
+        }    
+    }           
     console.log(cart)
 }
 
@@ -95,25 +99,27 @@ function cleanCart() {
     cart.length = 0;
 }
 
-function sumCart() {
-    cart.total = 0;
-    for (const product of cart) {
+function subtotal(product) {
         product.subtotal = 0;
         if (product.offer && product.offer.subtotalWithDiscount)
             product.subtotal = product.subtotal + product.offer.subtotalWithDiscount
         else
             product.subtotal = product.subtotal + product.price * product.quantity
-    }
-    for (const product of cart) {
-        cart.total = cart.total + product.subtotal
-    }
 }
 
-function applyPromotionsCart() {
+function sumCart() {
+
     for (const product of cart) {
+        let total = 0
+        total = total + product.subtotal
+    }
+    // console.log(total)
+    // return Math.round(total * 100) / 100
+}
+
+function applyPromotionsCart(product) {
         if (product.offer && product.quantity >= product.offer.number)
             product.offer.subtotalWithDiscount = product.price * (1 - product.offer.percent / 100) * product.quantity
-    }
 }
 
 function printCart(product) {
@@ -121,25 +127,15 @@ function printCart(product) {
     const totalPrice = document.getElementById("total_price")
 
     for (const product of cart) {
-            let currentRow = Array.from(cartList.rows).find(row => 
-                row.cells[0] && row.cells[0].textContent === product.name);
-            if (currentRow)
-            {
-                currentRow.cells[2].textContent = `${product.quantity}`;
-                currentRow.cells[3].textContent = `${product.subtotal.toFixed(2)}`;
-            }
-            else
-            {
-                let newRow = document.createElement('tr');
-                newRow.innerHTML = `
-                <th scope="row">${product.name}</th>
-                <td>${product.price}</td>
-                <td>${product.quantity}</td>
-                <td>${product.subtotal}</td>
-                `;
-            cartList.appendChild(newRow);
-            }
-        
+        //revisar que no este printado ya o sea un cambio de quantity
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <th scope="row">${product.name}</th>
+            <td>${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>${product.subtotal}</td>
+        `;
+        cartList.appendChild(newRow);
     }
-    totalPrice.innerHTML = `${cart.total.toFixed(2)}`
+    // totalPrice.innerHTML = ` 
 }
