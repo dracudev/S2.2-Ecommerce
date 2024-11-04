@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$primary-color: #993a98;
+$secondary-color: #6f3a70;
+$light-bg: #f8f9fa;
+$dark-bg: #212529;
+$text-dark: #333;
+
+body {
+    font-family: "Roboto";
+    color: $text-dark;
+    background-color: $light-bg;
+}
+
+.navbar {
+    background-color: $light-bg;
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $primary-color;
+    }
+    .nav-link {
+        color: $text-dark;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.header {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(112, 65, 206, 0.863)), url('../images/banner.webp') center/cover;
+    .display-4 {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 1.2rem;
+        color: lighten($dark-bg, 40%);
+    }
+}
+
+section {
+    padding-top: 3rem;
+    h2 {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+    }
+    i {
+        color: $primary-color;
+    }
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-img-top {
+        height: 250px;
+        object-fit: cover;
+    }
+    .card-body {
+        h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        }
+        color: $text-dark;
+    }
+    .card-footer {
+        background-color: transparent;
+        border-top: none;
+        .btn {
+        border-color: $primary-color;
+        color: $primary-color;
+        &:hover {
+            background-color: $primary-color;
+            color: white;
+        }
+        }
+    }
+}
+
+#cartModal {
+    .modal-content {
+        border-radius: 8px;
+    }
+    .modal-title {
+        font-weight: bold;
+        color: $primary-color;
+    }
+    .bill {
+        font-size: 1.5rem;
+        color: $secondary-color;
+    }
+}
+
+.bord {
+        padding: 1rem;
+}
+
+.bord i {
+        color: $secondary-color;
+  }
