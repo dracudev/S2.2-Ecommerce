@@ -45,6 +45,7 @@ function cleanCart() {
         product.quantity = 0;
     });
     sumCart();
+    cart.total = 0;
     printCart();
     console.log(cart);
 }
@@ -80,7 +81,7 @@ function applyPromotionsCart() {
 function printCart() {
     const cartList = document.getElementById("cart_list");
     const totalPrice = document.getElementById("total_price")
-
+    
     for (let index = cart.length - 1; index >= 0; index--) {
             const product = cart[index];
             let currentRow = Array.from(cartList.rows).find(row => 
@@ -105,9 +106,8 @@ function printCart() {
                 <td>${product.subtotal}</td>
                 <td><button type="button" class="border-0" onClick="removeFromCart(${product.id})"><i class="fa-solid fa-x"></i></button></td>
                 `;
-            cartList.appendChild(newRow);
-            }
-        
+                cartList.appendChild(newRow);
+            } 
     }
     totalPrice.innerHTML = `${cart.total.toFixed(2)}`
 }
