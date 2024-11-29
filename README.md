@@ -14,7 +14,7 @@ This project is a demo web application for an e-commerce platform. It enables us
 
 ## 📐 Project Structure
 
-### Level 1
+### ⭐ Level 1
 
 - **Exercise 1**: Implement the `buy()` function, which allows users to add products to the cart using a product ID. Each product should include a `quantity` field, which increments if the product already exists in the cart.
 
@@ -36,11 +36,11 @@ This project is a demo web application for an e-commerce platform. It enables us
   - Password must include both numbers and letters.
   - Email must follow a valid email format.
 
-### Level 2
+### ⭐⭐ Level 2
 
 - **Exercise 7**: Implement the `removeFromCart()` function to decrease the quantity of a product in the cart by one unit. If the quantity is 1, remove the product from the cart.
 
-### Level 3
+### ⭐⭐⭐ Level 3
 
 - **Exercise 8**: Refine the UI for a professional, polished look suitable for client demos.
 
