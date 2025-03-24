@@ -1,4 +1,4 @@
-# S2.2 Ecommerce Demo Application
+# Ecommerce Demo App
 
 ## 📄 Description
 
@@ -9,40 +9,6 @@ This project is a demo web application for an e-commerce platform. It enables us
 - Practice JavaScript concepts.
 - Learn to manipulate datasets.
 - Organize code into reusable functions.
-
-<br>
-
-## 📐 Project Structure
-
-### ⭐ Level 1
-
-- **Exercise 1**: Implement the `buy()` function, which allows users to add products to the cart using a product ID. Each product should include a `quantity` field, which increments if the product already exists in the cart.
-
-- **Exercise 2**: Create the `cleanCart()` function to reset the cart to an empty state.
-
-- **Exercise 3**: Implement a function to calculate the total cart value by summing up the prices of all products in the cart.
-
-- **Exercise 4**: Add a promotional feature through `applyPromotionsCart()`:
-  - 20% off on purchases of 3 or more cooking oil bottles.
-  - 30% off on purchases of 10 or more bakery items.
-
-- **Exercise 5**: Implement the `printCart()` function to dynamically display the cart contents in the modal with ID `cartModal`.
-
-- **Exercise 6**: Implement form validation in `checkout.js` for the `checkout.html` form:
-  - All fields are required.
-  - Minimum 3 characters for all fields.
-  - Name fields should contain only letters.
-  - Phone should contain only numbers.
-  - Password must include both numbers and letters.
-  - Email must follow a valid email format.
-
-### ⭐⭐ Level 2
-
-- **Exercise 7**: Implement the `removeFromCart()` function to decrease the quantity of a product in the cart by one unit. If the quantity is 1, remove the product from the cart.
-
-### ⭐⭐⭐ Level 3
-
-- **Exercise 8**: Refine the UI for a professional, polished look suitable for client demos.
 
 <br>
 
